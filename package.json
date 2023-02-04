@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "client": "npm start --prefix client",
+    "server": "nodemon index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -28,19 +31,17 @@
   },
   "homepage": "https://github.com/namethepricellc/tixie#readme",
   "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "clientDependencies": {
     "axios": "^1.3.2",
-    "bcryptjs": "^2.4.3",
     "bootstrap": "^5.2.3",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "express-validator": "^6.14.3",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^6.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
-  }
+  "private": true
 }
